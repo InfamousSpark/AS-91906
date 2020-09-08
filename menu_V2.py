@@ -3,8 +3,8 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
+#Must install from command prompt: pip install tkCalendar
 from tkcalendar import *
-#pip install tkcalendar
 #Importing CSV file created by me
 import csv
 
@@ -129,7 +129,7 @@ def add_item():
     tup = (item,qu,"${}".format(itemprice*qu))
     total += itemprice * qu
     tree.insert("", tk.END, values=tup)
-    ltotal.set("${}".format(str(1.15*total)))
+    ltotal.set("${}".format(str(round(1.15*total,2))))
 #Add item button
 add_btn = tk.Button(app, text="Add item", width=8, command=add_item, bg="#0f3676", fg="white")
 ##print(dict(comboExample))
@@ -164,7 +164,7 @@ studentid.set("")
 stud_lbl = tk.Label(app, textvariable=studentid, font='Helvetica 18 bold', fg="#0f3676")
 
 #Total bill label
-label1 = tk.Label(app, text = "Total Bill:",font='Helvetica 18 bold', fg="#0f3676")
+label1 = tk.Label(app, text = "Total Bill (GST inc):",font='Helvetica 15 bold', fg="#0f3676")
 
 #Total cost label
 total = 0
